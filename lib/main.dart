@@ -20,13 +20,14 @@ class MyApp extends StatelessWidget {
             width: 100,
             height: 100,
             decoration: BoxDecoration(
-              color: Colors.blue,
-              border: Border.all(width: 5, color: Colors.red), 
-              boxShadow: [
-                BoxShadow(offset: Offset(40, 40), color: Colors.pink),
-                BoxShadow(offset: Offset(20, 20), color: Colors.yellow),
-                ]
+              // color: Colors.blue,
+              // border: Border.all(width: 5, color: Colors.red), 
+              // boxShadow: [
+              //   BoxShadow(offset: Offset(40, 40), color: Colors.pink),
+              //   BoxShadow(offset: Offset(20, 20), color: Colors.yellow),
+              //   ]
               // shape: BoxShape.circle,
+              gradient: RadialGradient(colors: [Colors.yellow, Colors.pink]),
             ),
           ),
         ),
