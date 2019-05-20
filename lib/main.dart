@@ -15,11 +15,12 @@ class MyApp extends StatelessWidget {
         color: Colors.blue,
         padding: EdgeInsets.all(16),
         child: Column(
-          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Icon(Icons.cake, color: Colors.white, size: 50,),
-            Icon(Icons.cake, color: Colors.white, size: 50,),
-            Icon(Icons.cake, color: Colors.white, size: 50,), 
+            Icon(Icons.cake, color: Colors.white, size: 100,),
+            Icon(Icons.cake, color: Colors.white, size: 150,), 
           ],
         )
       ),
