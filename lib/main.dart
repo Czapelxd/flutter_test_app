@@ -16,20 +16,10 @@ class MyApp extends StatelessWidget {
           title: Text('siema'),
         ),
         body: Center(
-          child: Container(
-            width: 100,
-            height: 100,
-            decoration: BoxDecoration(
-              // color: Colors.blue,
-              // border: Border.all(width: 5, color: Colors.red), 
-              // boxShadow: [
-              //   BoxShadow(offset: Offset(40, 40), color: Colors.pink),
-              //   BoxShadow(offset: Offset(20, 20), color: Colors.yellow),
-              //   ]
-              // shape: BoxShape.circle,
-              gradient: RadialGradient(colors: [Colors.yellow, Colors.pink]),
-            ),
-          ),
+          child: Text('Hello World', style: TextStyle(
+            fontSize: 50,
+            fontWeight: FontWeight.bold
+          ),),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
@@ -39,6 +29,32 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+// class BoxDecorationW extends StatelessWidget {
+//   const BoxDecorationW({
+//     Key key,
+//   }) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Center(
+//       child: Container(
+//         width: 100,
+//         height: 100,
+//         decoration: BoxDecoration(
+//           color: Colors.blue,
+//           border: Border.all(width: 5, color: Colors.red),
+//           boxShadow: [
+//             BoxShadow(offset: Offset(40, 40), color: Colors.pink),
+//             BoxShadow(offset: Offset(20, 20), color: Colors.yellow),
+//             ],
+//           shape: BoxShape.circle,
+//           gradient: RadialGradient(colors: [Colors.yellow, Colors.pink]),
+//         ),
+//       ),
+//     );
+//   }
+// }
 
 // class PlatformCheck extends StatelessWidget {
 //   const PlatformCheck({
