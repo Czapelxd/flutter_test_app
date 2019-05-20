@@ -10,56 +10,75 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // Platform.isIOS/
     return MaterialApp(
+      theme: ThemeData(brightness: Brightness.dark),
       home: Scaffold(
-        body: Center(
-          child: Platform.isIOS
-              ? CupertinoSwitch(
-                  value: true,
-                  onChanged: (v) => null,
-                )
-              : Switch(
-                  value: true,
-                  onChanged: (v) => null,
-                ),
+        appBar: AppBar(
+          title: Text('siema'),
         ),
+        body: Center(
+          child: Icon(Icons.cake),
+        ),
+        floatingActionButton: FloatingActionButton(onPressed: () {},),
+        drawer: Drawer(),
       ),
     );
   }
 }
 
-class AwesomePage extends StatefulWidget {
-  final Color color;
+// class PlatformCheck extends StatelessWidget {
+//   const PlatformCheck({
+//     Key key,
+//   }) : super(key: key);
 
-  AwesomePage({Key key, this.color = Colors.blue}) : super(key: key);
+//   @override
+//   Widget build(BuildContext context) {
+//     return Center(
+//       child: Platform.isIOS
+//           ? CupertinoSwitch(
+//               value: true,
+//               onChanged: (v) => null,
+//             )
+//           : Switch(
+//               value: true,
+//               onChanged: (v) => null,
+//             ),
+//     );
+//   }
+// }
 
-  @override
-  _AwesomePageState createState() => _AwesomePageState();
-}
+// class AwesomePage extends StatefulWidget {
+//   final Color color;
 
-class _AwesomePageState extends State<AwesomePage> {
-  int count = 0;
+//   AwesomePage({Key key, this.color = Colors.blue}) : super(key: key);
 
-  @override
-  void initState() {
-    super.initState();
-  }
+//   @override
+//   _AwesomePageState createState() => _AwesomePageState();
+// }
 
-  @override
-  void dispose() {
-    super.dispose();
-  }
+// class _AwesomePageState extends State<AwesomePage> {
+//   int count = 0;
 
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: FlatButton(
-        child: Text('$count'),
-        onPressed: () {
-          setState(() {
-            count++;
-          });
-        },
-      ),
-    );
-  }
-}
+//   @override
+//   void initState() {
+//     super.initState();
+//   }
+
+//   @override
+//   void dispose() {
+//     super.dispose();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Center(
+//       child: FlatButton(
+//         child: Text('$count'),
+//         onPressed: () {
+//           setState(() {
+//             count++;
+//           });
+//         },
+//       ),
+//     );
+//   }
+// }
