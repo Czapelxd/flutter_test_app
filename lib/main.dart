@@ -16,9 +16,18 @@ class MyApp extends StatelessWidget {
           title: Text('siema'),
         ),
         body: Center(
-          child: Icon(Icons.cake),
+          child: Container(
+            width: 100,
+            height: 100,
+            decoration: BoxDecoration(
+              color: Colors.blue,
+              shape: BoxShape.circle,
+            ),
+          ),
         ),
-        floatingActionButton: FloatingActionButton(onPressed: () {},),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+        ),
         drawer: Drawer(),
       ),
     );
