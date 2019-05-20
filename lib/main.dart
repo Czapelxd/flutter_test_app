@@ -21,7 +21,12 @@ class MyApp extends StatelessWidget {
             height: 100,
             decoration: BoxDecoration(
               color: Colors.blue,
-              shape: BoxShape.circle,
+              border: Border.all(width: 5, color: Colors.red), 
+              boxShadow: [
+                BoxShadow(offset: Offset(40, 40), color: Colors.pink),
+                BoxShadow(offset: Offset(20, 20), color: Colors.yellow),
+                ]
+              // shape: BoxShape.circle,
             ),
           ),
         ),
