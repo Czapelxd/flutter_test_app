@@ -11,23 +11,60 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(brightness: Brightness.dark),
       home: Scaffold(
-      body: Container(
-        color: Colors.blue,
-        padding: EdgeInsets.all(16),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Icon(Icons.cake, color: Colors.white, size: 50,),
-            Icon(Icons.cake, color: Colors.white, size: 100,),
-            Icon(Icons.cake, color: Colors.white, size: 150,), 
-          ],
-        )
-      ),
+        body: SizedBox.expand(
+          child: Stack(
+            children: <Widget>[
+              Icon(
+                Icons.camera,
+                size: 100,
+                color: Colors.red,
+              ),
+              Align(
+                alignment: Alignment.center,
+                child: Icon(
+                  Icons.camera,
+                  size: 100,
+                  color: Colors.blue,
+                ),
+              ),
+              Positioned(
+                child: Icon(
+                  Icons.camera,
+                  size: 100,
+                  color: Colors.green,
+                ),
+                bottom: 0,
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
 }
+
+// class RowsAndColums extends StatelessWidget {
+//   const RowsAndColums({
+//     Key key,
+//   }) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       color: Colors.blue,
+//       padding: EdgeInsets.all(16),
+//       child: Column(
+//         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//         crossAxisAlignment: CrossAxisAlignment.stretch,
+//         children: <Widget>[
+//           Icon(Icons.cake, color: Colors.white, size: 50,),
+//           Icon(Icons.cake, color: Colors.white, size: 100,),
+//           Icon(Icons.cake, color: Colors.white, size: 150,),
+//         ],
+//       )
+//     );
+//   }
+// }
 
 // class TextWithTheme extends StatelessWidget {
 //   const TextWithTheme({
