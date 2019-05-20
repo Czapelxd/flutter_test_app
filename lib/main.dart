@@ -16,18 +16,9 @@ class MyApp extends StatelessWidget {
           title: Text('siema'),
         ),
         body: Center(
-          child: Row(
-            children: <Widget>[
-              Expanded(
-                child: Container(
-                  child: Text(
-                    'Hello World This is to long',
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
-            ],
+          child: Text(
+            'Hello World',
+            style: Theme.of(context).textTheme.display2,
           ),
         ),
         floatingActionButton: FloatingActionButton(
