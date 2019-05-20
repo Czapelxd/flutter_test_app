@@ -16,10 +16,19 @@ class MyApp extends StatelessWidget {
           title: Text('siema'),
         ),
         body: Center(
-          child: Text('Hello World', style: TextStyle(
-            fontSize: 50,
-            fontWeight: FontWeight.bold
-          ),),
+          child: Row(
+            children: <Widget>[
+              Expanded(
+                child: Container(
+                  child: Text(
+                    'Hello World This is to long',
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
