@@ -1,0 +1,56 @@
+
+{
+  "project_info": {
+    "project_number": "517808413808",
+    "firebase_url": "https://fireshio-tutorila.firebaseio.com",
+    "project_id": "fireshio-tutorila",
+    "storage_bucket": "fireshio-tutorila.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:517808413808:android:648a3d3b7b217380",
+        "android_client_info": {
+          "package_name": "com.example.fireshio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "517808413808-okrna0fttaau0vpcme00msj6n561v64f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fireshio",
+            "certificate_hash": "f4b9bbdfaad64dfd9fbf6a5f95026e2263d33e45"
+          }
+        },
+        {
+          "client_id": "517808413808-olbe6em0ru71ha9cmppb27f37esah301.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQp2i_vUfPo4Wa4T8rGAgHvJrNpIwxD8I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "517808413808-olbe6em0ru71ha9cmppb27f37esah301.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "517808413808-038k79s7ebhtjj029o06pli1s1udqf6c.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.fireshio"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
