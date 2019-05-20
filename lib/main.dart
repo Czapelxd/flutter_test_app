@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-import 'dart:io' show Platform;
+
 
 void main() => runApp(MyApp());
 
@@ -16,9 +15,13 @@ class MyApp extends StatelessWidget {
           title: Text('siema'),
         ),
         body: Center(
-          child: Text(
-            'Hello World',
-            style: Theme.of(context).textTheme.display2,
+          child: GestureDetector(
+            onDoubleTap: () => print('tapped!1'),
+            child: Container(
+              width: 100,
+              height: 100,
+              color: Colors.red,
+            ),
           ),
         ),
         floatingActionButton: FloatingActionButton(
@@ -29,6 +32,20 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+// class TextWithTheme extends StatelessWidget {
+//   const TextWithTheme({
+//     Key key,
+//   }) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Text(
+//       'Hello World',
+//       style: Theme.of(context).textTheme.display2,
+//     );
+//   }
+// }
 
 // class BoxDecorationW extends StatelessWidget {
 //   const BoxDecorationW({
