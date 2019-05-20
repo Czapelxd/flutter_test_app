@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -15,12 +14,14 @@ class MyApp extends StatelessWidget {
           title: Text('siema'),
         ),
         body: Center(
-          child: GestureDetector(
-            onDoubleTap: () => print('tapped!1'),
-            child: Container(
-              width: 100,
-              height: 100,
-              color: Colors.red,
+          child: Material(
+            color: Colors.red,
+            child: InkWell(
+              onTap: () => print('tapped down!'),
+              child: Container(
+                width: 100,
+                height: 100,
+              ),
             ),
           ),
         ),
