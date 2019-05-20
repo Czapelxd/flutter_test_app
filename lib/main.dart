@@ -1,46 +1,35 @@
-import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    // Platform.isIOS/
-    return MaterialApp(
-      theme: ThemeData(brightness: Brightness.dark),
-      home: Scaffold(
-        body: SizedBox.expand(
-          child: Stack(
-            children: <Widget>[
-              Icon(
-                Icons.camera,
-                size: 100,
-                color: Colors.red,
-              ),
-              Align(
-                alignment: Alignment.center,
-                child: Icon(
-                  Icons.camera,
-                  size: 100,
-                  color: Colors.blue,
-                ),
-              ),
-              Positioned(
-                child: Icon(
-                  Icons.camera,
-                  size: 100,
-                  color: Colors.green,
-                ),
-                bottom: 0,
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
+ @override
+ Widget build(BuildContext context) {
+   return MaterialApp(
+     home: Scaffold(
+       body: ListView.builder(itemBuilder: (context, idx) {
+          return Container(
+            color: Colors.blue,
+            margin: EdgeInsets.all(20),
+            height: 100,
+            child: Text('$idx'),
+          );
+       })
+     ),
+   );
+ }
+
+//   List<Widget> _cards() {
+//    return [1,2,3,4,5,6,7,8,9].map((v) => Container(
+//        color: Colors.blue,
+//        margin: EdgeInsets.all(20),
+//        height: 100,
+//        child: Text('$v'),
+//      )
+//    ).toList();
+//  }
+
 }
 
 // class RowsAndColums extends StatelessWidget {
