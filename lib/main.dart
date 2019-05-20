@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -10,25 +11,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(brightness: Brightness.dark),
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('siema'),
-        ),
-        body: Center(
-          child: Material(
-            color: Colors.red,
-            child: InkWell(
-              onTap: () => print('tapped down!'),
-              child: Container(
-                width: 100,
-                height: 100,
-              ),
-            ),
-          ),
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-        ),
-        drawer: Drawer(),
+      body: Container(
+        color: Colors.blue,
+        padding: EdgeInsets.all(16),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            Icon(Icons.cake, color: Colors.white, size: 50,),
+            Icon(Icons.cake, color: Colors.white, size: 50,),
+            Icon(Icons.cake, color: Colors.white, size: 50,), 
+          ],
+        )
+      ),
       ),
     );
   }
