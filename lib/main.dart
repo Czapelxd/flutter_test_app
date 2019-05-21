@@ -1,53 +1,53 @@
 // import 'package:flutter/cupertino.dart';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() => runApp(MyApp());
+
+class UserModel {
+  String name = 'Mike';
+}
+
+var stream = Stream.fromIterable([UserModel()]);
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        brightness: Brightness.dark,
-        primaryColor: Colors.lightGreen,
-        
-        textTheme: TextTheme(
-          body1: TextStyle(color: Colors.red, fontSize: 30),
-          headline: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold)
+    return StreamProvider<UserModel>.value(
+      stream: stream,
+          child: MaterialApp(
+        theme: ThemeData(
+          brightness: Brightness.dark,
+          primaryColor: Colors.lightGreen,
+          
+          textTheme: TextTheme(
+            body1: TextStyle(color: Colors.red, fontSize: 30),
+            headline: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold)
+          ),
         ),
+        home: HomeScreen(),
       ),
-      home: HomeScreen(),
     );
   }
 }
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key key}) : super(key: key);
+  
+  final Firestore db = Firestore.instance;
 
   @override
   Widget build(BuildContext context) {
+
+    var user =Provider.of<UserModel>(context);
+    
     return Scaffold(
         appBar: AppBar( title: Text('HOME', style: Theme.of(context).textTheme.headline,),),
         body: Center(
-          child: RaisedButton(child: Text('GO'), onPressed: (){
-            Navigator.push(context, MaterialPageRoute(
-              builder: (context) => HomeScreen(),
-            ),);
-          },color: Colors.lightGreen,) ,
+          child: Text(user.name) ,
         ),
       );
-  }
-}
-
-class SecondScreen extends StatelessWidget {
-  const SecondScreen({Key key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: child,
-    );
   }
 }
 
