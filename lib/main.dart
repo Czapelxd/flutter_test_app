@@ -1,39 +1,86 @@
 // import 'package:flutter/cupertino.dart';
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-
-  ScrollController _controller = ScrollController();
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        floatingActionButton: FloatingActionButton(
-          onPressed: () => _controller.animateTo(1000, curve: Curves.bounceIn, duration: Duration(seconds: 2)),
-        ),
-        body: ListView.builder(
-           controller: _controller,
-          itemBuilder: (context, idx) {
-            return Container(
-              color: Colors.green,
-              margin: EdgeInsets.all(20),
-              height: 100,
-              child: Text('$idx'),
-            );
-          },
+        body: Center(
+          child: new AnimatedPage(),
         ),
       ),
     );
   }
 }
+
+class AnimatedPage extends StatefulWidget {
+  const AnimatedPage({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  _AnimatedPageState createState() => _AnimatedPageState();
+}
+
+class _AnimatedPageState extends State<AnimatedPage> {
+  Color color = Colors.green;
+  double width = 100;
+  double height = 100;
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedContainer(
+      duration: Duration(seconds: 2),
+      curve: Curves.bounceInOut,
+      color: color,
+      width: width,
+      height: height,
+      child: FlatButton(
+        child: Text('Random'),
+        onPressed: () {
+          setState(() {
+            width = Random().nextDouble() * 500;
+            height = Random().nextDouble() * 500;
+
+            int r = Random().nextInt(255);
+            int b = Random().nextInt(255);
+            int g = Random().nextInt(255);
+            color = Color.fromRGBO(r, g, b, 1);
+          });
+        },
+      ),
+    );
+  }
+}
+
+// class ListBuilderWithController extends StatelessWidget {
+//   const ListBuilderWithController({
+//     Key key,
+//     @required ScrollController controller,
+//   }) : _controller = controller, super(key: key);
+
+//   final ScrollController _controller;
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return ListView.builder(
+//        controller: _controller,
+//       itemBuilder: (context, idx) {
+//         return Container(
+//           color: Colors.green,
+//           margin: EdgeInsets.all(20),
+//           height: 100,
+//           child: Text('$idx'),
+//         );
+//       },
+//     );
+//   }
+// }
 
 // class RowsAndColums extends StatelessWidget {
 //   const RowsAndColums({
