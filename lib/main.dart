@@ -1,5 +1,4 @@
 // import 'package:flutter/cupertino.dart';
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 
@@ -9,54 +8,74 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        primaryColor: Colors.lightGreen,
+        textTheme: TextTheme(
+          body1: TextStyle(color: Colors.red, fontSize: 30),
+          headline: TextStyle(color: Colors.blue, fontSize: 70)
+        ),
+      ),
       home: Scaffold(
+        appBar: AppBar(),
         body: Center(
-          child: new AnimatedPage(),
+          child: HomeScreen(),
         ),
       ),
     );
   }
 }
 
-class AnimatedPage extends StatefulWidget {
-  const AnimatedPage({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  _AnimatedPageState createState() => _AnimatedPageState();
-}
-
-class _AnimatedPageState extends State<AnimatedPage> {
-  Color color = Colors.green;
-  double width = 100;
-  double height = 100;
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedContainer(
-      duration: Duration(seconds: 2),
-      curve: Curves.bounceInOut,
-      color: color,
-      width: width,
-      height: height,
-      child: FlatButton(
-        child: Text('Random'),
-        onPressed: () {
-          setState(() {
-            width = Random().nextDouble() * 500;
-            height = Random().nextDouble() * 500;
-
-            int r = Random().nextInt(255);
-            int b = Random().nextInt(255);
-            int g = Random().nextInt(255);
-            color = Color.fromRGBO(r, g, b, 1);
-          });
-        },
-      ),
+    return Container(
+      child: Text('hello world', style: Theme.of(context).textTheme.headline,),
     );
   }
 }
+
+// class AnimatedPage extends StatefulWidget {
+//   const AnimatedPage({
+//     Key key,
+//   }) : super(key: key);
+
+//   @override
+//   _AnimatedPageState createState() => _AnimatedPageState();
+// }
+
+// class _AnimatedPageState extends State<AnimatedPage> {
+//   Color color = Colors.green;
+//   double width = 100;
+//   double height = 100;
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return AnimatedContainer(
+//       duration: Duration(seconds: 2),
+//       curve: Curves.bounceInOut,
+//       color: color,
+//       width: width,
+//       height: height,
+//       child: FlatButton(
+//         child: Text('Random'),
+//         onPressed: () {
+//           setState(() {
+//             width = Random().nextDouble() * 500;
+//             height = Random().nextDouble() * 500;
+
+//             int r = Random().nextInt(255);
+//             int b = Random().nextInt(255);
+//             int g = Random().nextInt(255);
+//             color = Color.fromRGBO(r, g, b, 1);
+//           });
+//         },
+//       ),
+//     );
+//   }
+// }
 
 // class ListBuilderWithController extends StatelessWidget {
 //   const ListBuilderWithController({
