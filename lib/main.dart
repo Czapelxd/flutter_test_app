@@ -11,17 +11,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.dark,
         primaryColor: Colors.lightGreen,
+        
         textTheme: TextTheme(
           body1: TextStyle(color: Colors.red, fontSize: 30),
-          headline: TextStyle(color: Colors.blue, fontSize: 70)
+          headline: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold)
         ),
       ),
-      home: Scaffold(
-        appBar: AppBar(),
-        body: Center(
-          child: HomeScreen(),
-        ),
-      ),
+      home: HomeScreen(),
     );
   }
 }
@@ -31,8 +27,26 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar( title: Text('HOME', style: Theme.of(context).textTheme.headline,),),
+        body: Center(
+          child: RaisedButton(child: Text('GO'), onPressed: (){
+            Navigator.push(context, MaterialPageRoute(
+              builder: (context) => HomeScreen(),
+            ),);
+          },color: Colors.lightGreen,) ,
+        ),
+      );
+  }
+}
+
+class SecondScreen extends StatelessWidget {
+  const SecondScreen({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
-      child: Text('hello world', style: Theme.of(context).textTheme.headline,),
+      child: child,
     );
   }
 }
